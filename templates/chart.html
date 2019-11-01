@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Chart.js </title>
+    <!-- import plugin script -->
+    <script>
+        let sessions = {{ sessions | tojson }}
+        let statistics = {{ statistics | tojson }}
+    </script>
+    <script src='static/Chart.min.js'></script>
+    <script src='static/statistics.js'></script>
+    <style>
+        .container {
+            display: grid;
+            grid-gap: 10px;
+            grid-auto-columns: 50%;
+            justify-content: center;
+        }
+        .box {
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            background-color: #dedede67;
+        }
+        .general {
+            justify-content: center;
+            grid-row: 1;
+            grid-column: 1;
+        }
+        .sessions {
+            justify-content: center;
+            grid-row: 1;
+            grid-column: 2;
+        }
+        .reminders {
+            grid-row: 2;
+            grid-column: 1;
+        }
+        .asked {
+            grid-row: 2;
+            grid-column: 2;
+        }
+
+        @media (max-device-width: 568px) {
+            .container {
+                grid-auto-columns: 100%;
+            }
+            .sessions {
+                grid-row: 1;
+                grid-column: 1;
+            }
+            .general {
+                grid-row: 2;
+            }
+            .reminders {
+                grid-row: 3;
+            }
+            .asked {
+                grid-row: 4;
+                grid-column: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box general">
+            <h2>General</h2>
+            <canvas id="general"></canvas>
+        </div>
+        <div class="box sessions">
+            <h2>Sessions</h2>
+            <canvas id="sessions"></canvas>
+        </div>
+        <div class="box reminders">
+            <h2>Reminders</h2>
+            <canvas id="reminders"></canvas>
+        </div>
+        <div class="box asked">
+            <h2>Asked</h2>
+            <canvas id="asked"></canvas>
+        </div>
+    </div>
+</body>
+
+</html>

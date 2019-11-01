@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+gunicorn = "*"
+django-heroku = "*"
+flask = "*"
+pytelegrambotapi = "*"
+python-firebase = "*"
+numpy = "==1.15.2"
+pandas = "==0.24.2"
+pytesseract = "*"
+opencv-python = "*"
+opencv-python-headless = "*"
+googletrans = "*"
+"boto3" = "*"
+futures = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "2.7"
